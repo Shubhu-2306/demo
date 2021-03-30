@@ -1,0 +1,41 @@
+--------------------------------------------------------------
+PA_FIN_REFUND
+REFUND_TYPE_ID→PV_SAC_FIN_REFUND_TYPE
+--------------------------------------------------------------
+PA_FIN_ORDER_CREDIT_CARD_INFO
+CREDIT_CARD_TYPE_ID→PV_SAC_CREDIT_CARD_TYPE
+--------------------------------------------------------------
+PA_CREDIT_CARD_TX_LOG
+TX_ACTION_TYPE_ID→PV_SAC_CREDIT_CARD_TX_ACTION_TYPE
+--------------------------------------------------------------
+
+
+CREATE VIEW PV_SAC_FIN_REFUND_TYPE
+      AS SELECT
+              A.REFUND_TYPE_ID AS ID,
+              B.SF_LOCALE,
+			  B.LOCALE,
+              B.LABEL AS LABEL
+         FROM PS_FIN_REFUND_TYPE A
+		 INNER JOIN PV_SAC_I18N_ACTIVE_LOCALE_LABEL B ON A.LABEL_ID=B.ID;
+      ;--##
+	  
+ CREATE VIEW PV_SAC_CREDIT_CARD_TYPE
+      AS SELECT
+              A.CREDIT_CARD_TYPE_ID AS ID,
+              B.SF_LOCALE,
+			  B.LOCALE,
+              B.LABEL AS LABEL
+         FROM PS_CREDIT_CARD_TYPE A
+		 INNER JOIN PV_SAC_I18N_ACTIVE_LOCALE_LABEL B ON A.LABEL_ID=B.ID;
+      ;--##
+	  
+ CREATE VIEW PV_SAC_CREDIT_CARD_TX_ACTION_TYPE
+      AS SELECT
+              A.TX_ACTION_TYPE_ID AS ID,
+              B.SF_LOCALE,
+			  B.LOCALE,
+              B.LABEL AS LABEL
+         FROM PS_CREDIT_CARD_TX_ACTION_TYPE A
+		 INNER JOIN PV_SAC_I18N_ACTIVE_LOCALE_LABEL B ON A.LABEL_ID=B.ID;
+      ;--##
