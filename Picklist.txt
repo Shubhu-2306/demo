@@ -7,7 +7,7 @@ CREDIT_CARD_TYPE_ID→PV_SAC_CREDIT_CARD_TYPE
 --------------------------------------------------------------
 PA_CREDIT_CARD_TX_LOG
 TX_ACTION_TYPE_ID→PV_SAC_CREDIT_CARD_TX_ACTION_TYPE
---------------------------------------------------------------
+----------------------------------------------------------------
 
 
 CREATE VIEW PV_SAC_FIN_REFUND_TYPE
